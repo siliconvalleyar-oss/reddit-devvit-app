@@ -5,6 +5,9 @@ node_modules/
 dist/
 public/*.js
 public/*.js.map
+website/public/*.js
+website/public/*.js.map
+website/dist/
 
 # Environment files
 .env
@@ -12,15 +15,23 @@ public/*.js.map
 
 # OS files
 .DS_Store
+Thumbs.db
 
 # Archives
 *.zip
+*.tar.gz
 
-# Python artifacts (not part of this project)
+# Python artifacts
 __pycache__/
 *.pyc
 *.pyo
 *.egg-info/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
 
 # Credentials
 credenciales.txt

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>my-client-bare — App de Reddit</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav container">
+        <a href="#" class="logo">my-client-bare</a>
+        <div class="nav-links">
+          <a href="#features">Características</a>
+          <a href="#how-it-works">Cómo funciona</a>
+          <a href="#trends">Trends</a>
+          <a href="#cta">Probar</a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="badge">App para Reddit</span>
+          <h1>Un contador interactivo dentro de Reddit</h1>
+          <p>
+            Una experiencia de juego ligera y divertida directamente en tus
+            publicaciones de Reddit. Suma, resta y compite con tu comunidad.
+          </p>
+          <div class="hero-actions">
+            <a href="#cta" class="btn btn-primary">Comenzar</a>
+            <a href="https://developers.reddit.com/docs" class="btn btn-secondary" target="_blank" rel="noopener">Documentación</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img src="/static/snoo.png" alt="Snoo — mascota de Reddit" class="hero-snoo" />
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="container">
+        <h2 class="section-title">Características</h2>
+        <div class="features-grid" id="features-grid"></div>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="how-it-works">
+      <div class="container">
+        <h2 class="section-title">Cómo funciona</h2>
+        <div class="steps" id="steps-list"></div>
+      </div>
+    </section>
+
+    <section id="trends">
+      <div class="container">
+        <span class="badge-trends">🔥 Hoy en Reddit</span>
+        <h2 class="section-title">Trending Topics — 23 Junio 2026</h2>
+        <p class="section-subtitle">Los 5 temas más candentes en Reddit hoy, con guiones listos para redes.</p>
+        <div class="trends-list" id="trends-list"></div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2 class="section-title">Contáctanos</h2>
+        <p class="section-subtitle">Déjanos un mensaje (se guarda en MySQL)</p>
+        <form class="contact-form" id="contact-form">
+          <input type="text" name="name" placeholder="Tu nombre" required />
+          <input type="email" name="email" placeholder="Tu email" required />
+          <textarea name="message" placeholder="Tu mensaje..." rows="4" required></textarea>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+        <p class="contact-feedback" id="contact-feedback"></p>
+      </div>
+    </section>
+
+    <section id="cta" class="cta">
+      <div class="container">
+        <div id="stats-bar" class="stats-bar"></div>
+        <h2>¿Listo para usarlo en tu subreddit?</h2>
+        <p>Instala la app y cualquier moderador puede crear un post con el contador interactivo.</p>
+        <a href="https://www.reddit.com/r/Devvit" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+          Ir a r/Devvit
+        </a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-content">
+        <p class="footer-brand">my-client-bare</p>
+        <div class="footer-links">
+          <a href="https://developers.reddit.com/docs" target="_blank" rel="noopener">Docs</a>
+          <a href="https://www.reddit.com/r/Devvit" target="_blank" rel="noopener">r/Devvit</a>
+          <a href="https://discord.com/invite/R7yu2wh9Qz" target="_blank" rel="noopener">Discord</a>
+        </div>
+        <p class="footer-copy">Hecho con ❤️ para la comunidad de Reddit · <span id="year"></span></p>
+      </div>
+    </footer>
+
+    <div class="modal-overlay" id="modal-overlay">
+      <div class="modal" id="modal-content">
+        <button class="modal-close" onclick="closeModal()">✕</button>
+      </div>
+    </div>
+
+    <script src="/js/data.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>
