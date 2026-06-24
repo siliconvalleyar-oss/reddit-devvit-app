@@ -2,14 +2,16 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "outDir": "../dist/types/client",
-    "lib": ["DOM", "ES2023"],
     "tsBuildInfoFile": "../dist/types/client/tsconfig.tsbuildinfo",
     "customConditions": ["browser"],
     "rootDir": "../src/client"
   },
   "include": ["../src/client/**/*"],
-  "exclude": ["../src/server/**/*"],
+  "exclude": [],
   "references": [
+    {
+      "path": "./tsconfig.server.json"
+    },
     {
       "path": "./tsconfig.shared.json"
     }

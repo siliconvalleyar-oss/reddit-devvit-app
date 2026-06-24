@@ -1,8 +1,34 @@
-import { createServer, getServerPort } from "@devvit/web/server";
-import { serverOnRequest } from "./server.ts";
+import { Hono } from 'hono';
+import { serve } from '@hono/node-server';
+import { trpcServer } from '@hono/trpc-server';
 
-const server = createServer(serverOnRequest);
-const port: number = getServerPort();
+import { createServer, getServerPort } from '@devvit/web/server';
+import { menu } from './routes/menu';
+import { triggers } from './routes/triggers';
+import { appRouter } from './trpc';
+import { createContext } from './context';
 
-server.on("error", (err) => console.error(`server error; ${err.stack}`));
-server.listen(port);
+const app = new Hono();
+
+const api = new Hono();
+api.use(
+  '/trpc/*',
+  trpcServer({
+    endpoint: '/api/trpc',
+    router: appRouter,
+    createContext,
+  })
+);
+
+const internal = new Hono();
+internal.route('/menu', menu);
+internal.route('/triggers', triggers);
+
+app.route('/api', api);
+app.route('/internal', internal);
+
+serve({
+  fetch: app.fetch,
+  createServer: createServer,
+  port: getServerPort(),
+});
