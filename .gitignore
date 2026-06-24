@@ -1,7 +1,26 @@
+# Dependencies
 node_modules/
-.DS_Store
+
+# Build output
 dist/
-.env
-.env.local
 public/*.js
 public/*.js.map
+
+# Environment files
+.env
+.env.local
+
+# OS files
+.DS_Store
+
+# Archives
+*.zip
+
+# Python artifacts (not part of this project)
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Credentials
+credenciales.txt
