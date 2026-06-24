@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Query
 from pydantic import BaseModel
 
-from ..database import execute, init_schema, query
+from database import execute, init_schema, query
 
 router = APIRouter(prefix="/api/data", tags=["database"])
 

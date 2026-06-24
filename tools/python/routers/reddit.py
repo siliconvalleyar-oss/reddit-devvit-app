@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Query
 
-from ..reddit_client import get_hot, get_subreddit_info, get_trending, get_trending_subreddits, search
+from reddit_client import get_hot, get_subreddit_info, get_trending, get_trending_subreddits, search
 
 router = APIRouter(prefix="/api/reddit", tags=["reddit"])
 
